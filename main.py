@@ -99,9 +99,8 @@ def find_cars(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, ce
 def process_image(img):
 	global prev_rects
 	box_1= find_cars(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, cell_per_block, spatial_size, hist_bins, color_space,True)
-	#box_2 = find_cars(img, 400, 464, 1.0, svc, X_scaler, orient, pix_per_cell, cell_per_block, spatial_size, hist_bins, color_space,True)
-	#box_3 = find_cars(img, 432, 560, 2.0, svc, X_scaler, orient, pix_per_cell, cell_per_block, spatial_size, hist_bins, color_space,True)
-	boxes = box_1#+box_2
+
+	boxes = box_1
 
 	heatmap_img = np.zeros_like(img[:,:,0])
 	heatmap_img = add_heat(heatmap_img, boxes)
