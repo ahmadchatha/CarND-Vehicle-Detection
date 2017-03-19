@@ -104,7 +104,6 @@ def process_image(img):
 	boxes = box_1#+box_2
 
 	heatmap_img = np.zeros_like(img[:,:,0])
-	#for rects in prev_rects:
 	heatmap_img = add_heat(heatmap_img, boxes)
 	prev_rects.append(heatmap_img)
 	if len(prev_rects) > 35:
